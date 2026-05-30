@@ -1,0 +1,209 @@
+<!-- Arquivo: suporte.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+    <!-- Configurações da página -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título da página -->
+    <title>Sistema de Suporte</title>
+
+</head>
+<body>
+
+    <!-- Título principal -->
+    <h1>Abertura de Chamados</h1>
+
+    <!-- Protocolo fictício -->
+    <p>
+        <strong>Protocolo do Chamado:</strong>
+        CH-2026-001
+    </p>
+
+    <!-- Início do formulário -->
+    <form>
+
+        <!-- ================================= -->
+        <!-- DADOS DO USUÁRIO -->
+        <!-- ================================= -->
+
+        <fieldset>
+
+            <legend>Dados do Usuário</legend>
+
+            <!-- Nome -->
+            <label for="nome">Nome:</label>
+            <input 
+                type="text"
+                id="nome"
+                name="nome"
+                placeholder="Digite seu nome"
+                required
+            >
+
+            <br><br>
+
+            <!-- Email -->
+            <label for="email">E-mail:</label>
+            <input 
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Digite seu e-mail"
+                required
+            >
+
+            <br><br>
+
+            <!-- Telefone -->
+            <label for="telefone">Telefone:</label>
+            <input 
+                type="tel"
+                id="telefone"
+                name="telefone"
+                placeholder="(00) 00000-0000"
+                required
+            >
+
+        </fieldset>
+
+        <br>
+
+        <!-- ================================= -->
+        <!-- DADOS DO CHAMADO -->
+        <!-- ================================= -->
+
+        <fieldset>
+
+            <legend>Dados do Chamado</legend>
+
+            <!-- Setor -->
+            <label for="setor">Setor:</label>
+
+            <select 
+                id="setor"
+                name="setor"
+                required
+            >
+
+                <option value="">Selecione</option>
+                <option value="financeiro">Financeiro</option>
+                <option value="vendas">Vendas</option>
+                <option value="estoque">Estoque</option>
+                <option value="administrativo">Administrativo</option>
+                <option value="ti">TI</option>
+
+            </select>
+
+            <br><br>
+
+            <!-- Assunto -->
+            <label for="assunto">Assunto:</label>
+            <input 
+                type="text"
+                id="assunto"
+                name="assunto"
+                placeholder="Digite o assunto do chamado"
+                required
+            >
+
+            <br><br>
+
+            <!-- Prioridade -->
+            <p>Prioridade:</p>
+
+            <input 
+                type="radio"
+                id="baixa"
+                name="prioridade"
+                value="baixa"
+                required
+            >
+            <label for="baixa">Baixa</label>
+
+            <br>
+
+            <input 
+                type="radio"
+                id="media"
+                name="prioridade"
+                value="media"
+            >
+            <label for="media">Média</label>
+
+            <br>
+
+            <input 
+                type="radio"
+                id="alta"
+                name="prioridade"
+                value="alta"
+            >
+            <label for="alta">Alta</label>
+
+            <br>
+
+            <input 
+                type="radio"
+                id="urgente"
+                name="prioridade"
+                value="urgente"
+            >
+            <label for="urgente">Urgente</label>
+
+            <br><br>
+
+            <!-- Descrição -->
+            <label for="descricao">
+                Descrição do Problema:
+            </label>
+
+            <br>
+
+            <textarea 
+                id="descricao"
+                name="descricao"
+                rows="6"
+                cols="50"
+                placeholder="Descreva detalhadamente o problema"
+                required
+            ></textarea>
+
+            <br><br>
+
+            <!-- Upload de arquivo -->
+            <label for="arquivo">
+                Upload de Imagem/Arquivo:
+            </label>
+
+            <input 
+                type="file"
+                id="arquivo"
+                name="arquivo"
+                required
+            >
+
+        </fieldset>
+
+        <br>
+
+        <!-- ================================= -->
+        <!-- BOTÕES -->
+        <!-- ================================= -->
+
+        <!-- Botão abrir chamado -->
+        <button type="submit">
+            Abrir Chamado
+        </button>
+
+        <!-- Botão limpar -->
+        <button type="reset">
+            Limpar Formulário
+        </button>
+
+    </form>
+
+</body>
+</html>

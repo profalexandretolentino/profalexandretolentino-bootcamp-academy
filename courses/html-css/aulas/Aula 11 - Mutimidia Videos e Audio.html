@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=form, initial-scale=1.0">
+    <title>Aula Audio e Video</title>
+</head>
+<body>
+<h1>Multimídia</h1>
+
+    <h2>Audios</h2> 
+    <audio  src="./audio/sweet.mp3" 
+            controls
+            muted
+            autoplay
+            loop
+            preload="metadata">
+
+    </audio>
+    
+    <audio controls muted autoplay loop preload="auto">
+        <source src="./audio/sweet.mp3" />
+        <source src="audio/sweet.ogg" type="audio/ogg" />
+        <source src="audio/TAEYEON2.webm" type="audio/webm" />
+        <p>
+            Seu navegador não suporta audio HTML5. Aqui está um
+            <a href="https://www.spotify.com/">link para o audio no spotify</a> em vez disso.
+        </p>
+      </audio>
+
+      <h2>Audio Externo Spotify - Iframe</h2>
+    <iframe 
+        data-testid="embed-iframe" 
+        style="border-radius:12px" 
+        src="https://open.spotify.com/embed/track/54X78diSLoUDI3joC2bjMz?utm_source=generator" 
+        width="50%" 
+        height="352" 
+        frameBorder="0" 
+        allowfullscreen="" 
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+        loading="lazy">
+
+    </iframe>
+    <iframe 
+        data-testid="embed-iframe" 
+        style="border-radius:12px" 
+        src="https://open.spotify.com/embed/track/7o9uu2GDtVDr9nsR7ZRN73?utm_source=generator" 
+        width="50%" 
+        height="352" 
+        frameBorder="0" 
+        allowfullscreen="" 
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+        loading="lazy">
+    </iframe>
+
+    <h2>Videos</h2>
+    <!-- Atributos = src, type,  height, width, controls, poster, autoplay, loop, preload e muted. -->
+<!-- <source> -->
+    <!-- MP4, WebM e Ogg-->
+    <video 
+            src="./videos/A-EVOLUÇÃO-DOS-MEIOS-DE-COMUNICAÇÃO.mp4" 
+            type="video/mpeg" 
+            muted 
+            controls
+            poster="./img/neymar-jr.jpg"
+            width="100%" 
+            height="">
+            <source src="videos/A-EVOLUÇÃO-DOS-MEIOS-DE-COMUNICAÇÃO.ogg"/>
+            <source src="videos/A-EVOLUÇÃO-DOS-MEIOS-DE-COMUNICAÇÃO.webm" />
+            <p>
+                Seu navegador não suporta vídeo HTML5. Aqui está um
+                <a href="https://www.youtube.com/embed/NA8pdCKxkN">link para o vídeo</a> em vez disso.
+            </p>
+    </video>
+
+      <h2>Video Externo Youtube - Iframe</h2>
+      <iframe 
+      width="100%" 
+      height="315" 
+      src="https://www.youtube.com/embed/kdg-sXdITNg?si=eQGvYwtKr7gA1_IA&amp;start=60" 
+      title="YouTube video player" 
+      frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+      referrerpolicy="strict-origin-when-cross-origin" 
+      allowfullscreen>
+    </iframe>
+
+ <iframe width="560" height="315" src="https://www.youtube.com/embed/OzP9Y4mDOjc?si=TErOagzdL6_zC5B1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+</body>
+</html>

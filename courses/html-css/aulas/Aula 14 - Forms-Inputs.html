@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Aula Form 2 - Inputs</title>
+    </head>
+    <body>
+        <h1>Formulários - Inputs</h1>
+        <form action="dados.php" method="post">
+
+        <fieldset>
+            <legend>Caixas Básicas</legend>
+            <div>
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" placeholder="Ex: João da Silva"/>
+            </div>
+            <div>
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" placeholder="Seu melhor e-mail" />
+            </div>
+            <div>
+                <label for="url">Seu Site:</label>
+                <input type="url" id="url" placeholder="Digite aqui o seu site" />
+            </div>
+            <div>
+                <label  for="msg">Mensagem:</label>
+                <textarea id="msg-" placeholder="Digite um elogio ou uma reclamação" rows="5" cols="10" maxlength="200"></textarea>
+            </div>
+            <div>
+                <input type="submit" value="validar" onclick="validarFormulario()"/>
+            </div><br/>
+        </fieldset>
+            <!-- Aqui começa a caixa de números -->
+            <div>
+                <h3>Caixa de Números</h3>
+                <label for="phone_id">Telefone</label>
+                <input id="phone_id" type="tel" placeholder="(99) 99999-9999" />
+                <button type="submit">Enviar</button>
+            </div>
+            <div>
+                <h3>Caixa de Intervalo</h3>
+                <label for="label_id">Nível de Água da lavadora</label>
+                <input id="idade_id" type="range" value="30" min="1" max="3"/>
+                <button type="submit">Enviar</button>
+            </div>
+            <div>
+                <h3>Caixa de Busca</h3>
+                <label for="keywords_id">Busca</label>
+                <input id="keywords_id" name="keywords" type="search">
+                <input id="botao-id" type="submit" value="enviar" />
+            </div>
+            <h3>Criar Usuário e Senha</h3>
+            <div>
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" placeholder="Seu melhor e-mail"/>
+            </div>
+            <div>
+                <label for="senha_id">Senha:</label>
+                <input id="senha_id" name="senha" type="password"  minlength="8" />
+                <input id="botao-id" type="submit" value="enviar" />
+            </div>
+            <h3>Caixa de Cor</h3>
+                <div>
+                    <label for="cor_id">Escolha uma cor:</label>
+                    <input type="color">
+                    <input type="submit">
+                </div>
+
+            <h2>Caixas de Datas e Horas</h2>
+
+            <fieldset>
+                <legend>Datas, Horas e Eventos</legend>
+                <div>
+                    <h4>Data sem Fuso Horário</h4>
+                    <input id="data_id" name="data" type="date" />      
+                    <h4>Data e Hora sem Fuso Horário</h4>
+                    <input id="data_hora_id" name="data-hora" type="datetime-local" />
+                    <h4>Mês sem Fuso Horário</h4>
+                    <input id="mes_id" name="mes" type="month" />
+                    <h4>Hora sem Fuso Horário</h4>
+                    <input id="hora_id" name="hora" type="time" />
+                    <h4>Semana sem Fuso Horário</h4>
+                    <input id="semana_id" name="semana" type="week" />
+                </div>
+            </fieldset>
+           
+            <h3>Caixas de Check, Radio e Select </h3>
+            <fieldset>
+                <legend>Escolhas e Opções</legend>
+                <div>
+                    <h4>Check Box - Habilidades em Programação</h4>
+                    HTML5 <input id="html5_id" name="linguagens" type="checkbox" value="HTML5" />
+                    CSS3 <input id="css3_id" name="linguagens" type="checkbox" value="CSS3" />
+                    JS <input id="javascript_id" name="linguagens" type="checkbox" value="Javascript" />
+                    PHP <input id="php_id" name="linguagens" type="checkbox" value="PHP" />
+                    Java <input id="java_id" name="linguagens" type="checkbox" value="Java" />
+    
+                    <h4>Radio Button - Navegador Preferido</h4>
+                    Chrome <input id="chrome_id" name="navegadores" type="radio" value="Chrome" />
+                    Firefox <input id="firefox_id" name="navegadores" type="radio" value="Firefox" />
+                    Opera <input id="opera_id" name="navegadores" type="radio" value="Opera" />
+                    Safari <input id="safari_id" name="navegadores" type="radio" value="Safari" />
+                    Edge <input id="edge_id" name="navegadores" type="radio" value="Edge" />
+                    Internet Explorer 9<input id="ie9_id" name="navegadores" type="radio" value="Internet Explorer 9" />
+                </div>
+                <div>
+                    <h4>Lista Drop-Down - Select</h4>
+                    <select id="uf" name="uf">
+                        <option value="">Escolha um estado:</option>
+                        <option value="DF">Distrito Federal</option>
+                        <option value="GO">Goiás</option>
+                        <option value="SP">São Paulo</option>
+                        <option value="RJ">Rio de Janeiro</option>
+                    </select>
+                    <input id="botao-id" type="submit" value="enviar" />
+                </div>
+            </fieldset>
+           
+            <div>
+                <h3>Botões</h3>
+                <fieldset>
+                    <legend>Botões Diversos</legend>
+                    <div>
+                        <h4>Botão Enviar</h4>
+                        <input id="botao-id1" type="submit" value="enviar" />
+                        <h4>Botão Redefinir</h4>
+                        <input id="botao-id2" type="reset" />
+                        <h4>Botão de Upload</h4>
+                        <input id="botao-id3" type="file" value="file" />
+                        <h4>Botão Genérico</h4>
+                        <input id="botao-id4" type="button" value="Calcular" />
+                    </div>
+                </fieldset> 
+            <br/>
+        </form>
+        <script>
+            function validarFormulario() { 
+                const nome = document.getElementById('nome'); 
+                const email = document.getElementById('email'); 
+
+                if ((nome.value === '') && (email.value === ''))  { 
+                    alert('O campo nome é obrigatório.'); 
+                    alert('O campo e-mail é obrigatório.'); 
+                    return false; 
+                } 
+                return true; 
+            }
+
+        </script>
+
+
+        <form action="processa-dados-form.php" method="post">
+            <fieldset>
+                <legend>Formulario de Cadastro</legend>
+                <select name="" id="">
+                   <option value="DF">Distrito Federal -DF</option>
+                   <option value="SP">São Paulo - SP</option> 
+                </select>
+            </fieldset>
+        </form>
+
+</body>
+</html>
