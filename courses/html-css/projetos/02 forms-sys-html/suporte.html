@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+</head>
+<body>
+
+    <h1>Suporte Técnico</h1>
+
+    <form action="chamado-sucesso.html">
+
+        <fieldset>
+            <legend>Abertura de Chamado</legend>
+
+            <label>Nome:</label>
+            <br>
+            <input type="text" required>
+
+            <br><br>
+
+            <label>Email:</label>
+            <br>
+            <input type="email" required>
+
+            <br><br>
+
+            <label>Setor:</label>
+            <br>
+            <select>
+                <option>Financeiro</option>
+                <option>TI</option>
+                <option>Estoque</option>
+            </select>
+
+            <br><br>
+
+            <label>Prioridade:</label>
+            <br>
+
+            <input type="radio" name="prioridade">
+            Baixa
+
+            <br>
+
+            <input type="radio" name="prioridade">
+            Média
+
+            <br>
+
+            <input type="radio" name="prioridade">
+            Alta
+
+            <br><br>
+
+            <label>Descrição:</label>
+            <br>
+            <textarea required></textarea>
+
+            <br><br>
+
+            <label>Anexo:</label>
+            <br>
+            <input type="file">
+
+            <br><br>
+
+            <button type="submit">Abrir Chamado</button>
+
+        </fieldset>
+
+    </form>
+
+    <br>
+    <a href="./painel-admin.html">Voltar ao menu</a>
+
+</body>
+</html>

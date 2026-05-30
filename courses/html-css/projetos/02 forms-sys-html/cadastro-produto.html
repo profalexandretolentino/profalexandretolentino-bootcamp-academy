@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Produto</title>
+</head>
+<body>
+
+    <h1>Cadastro de Produto</h1>
+
+    <form action="produto-cadastrado.html">
+
+        <fieldset>
+            <legend>Informações do Produto</legend>
+
+            <label>Nome do Produto:</label>
+            <br>
+            <input type="text" required>
+
+            <br><br>
+
+            <label>Código:</label>
+            <br>
+            <input type="text" required>
+
+            <br><br>
+
+            <label>Categoria:</label>
+            <br>
+            <select required>
+                <option>Informática</option>
+                <option>Periféricos</option>
+                <option>Celulares</option>
+            </select>
+
+            <br><br>
+
+            <label>Quantidade:</label>
+            <br>
+            <input type="number" min="0" required>
+
+            <br><br>
+
+            <label>Preço:</label>
+            <br>
+            <input type="number" min="0" required>
+
+            <br><br>
+
+            <label for="desc">Descrição:</label>
+            <br><br>
+            <textarea name="" id="desc"></textarea>
+            
+            <br><br>
+            <button type="submit">Cadastrar</button>
+        </fieldset>
+    </form>
+    <br>
+    <a href="./painel-admin.html">Voltar ao menu</a>
+</html>
