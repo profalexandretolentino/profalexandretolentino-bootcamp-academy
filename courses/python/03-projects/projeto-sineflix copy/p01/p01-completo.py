@@ -86,17 +86,25 @@ def buscar_filme():
     else:
         print("Filme não encontrado.")
 
-
 # ======================================
 # ADICIONAR HISTÓRICO
 # ======================================
 def adicionar_historico():
+    filme = input("Qual filme você assistiu? ").strip() # .strip() remove espaços extras inúteis
 
-    filme = input("Qual filme você assistiu? ")
+    # 1. Verifica se o filme existe no catálogo
+    if filme not in filmes:
+        print(f"Erro: O filme {filme} não existe no catálogo. Não é possível adicionar ao histórico.")
+        return # Encerra a função mais cedo
 
+    # 2. Verifica se o filme já foi assistido (evita duplicados no histórico, se desejar)
+    if filme in historico:
+        print(f"Você já informou que assistiu ao filme {filme} anteriormente.")
+        return 
+
+    # 3. Se passou pelas validações, adiciona ao histórico
     historico.append(filme)
-
-    print("Filme adicionado ao histórico.")
+    print(f"Sucesso: {filme} adicionado ao seu histórico de assistidos!")
 
 
 # ======================================
