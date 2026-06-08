@@ -4,8 +4,13 @@ filmes = [
     "Avatar",
     "Duna",
     "Interestelar",
-    "Vingadores"
+    "Vingadores",
+    "O Poderoso Chefão",
+    "Clube da Luta",
+    "Inception",
+    "Pulp Fiction"
 ]
+
 # ======================================
 # LISTAR FILMES
 # ======================================

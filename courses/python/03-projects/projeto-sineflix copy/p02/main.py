@@ -22,10 +22,26 @@ from categorias import(
 from utilitarios import(
     boas_vindas
 )
-# ======================================
-# MENU PRINCIPAL
-# ======================================
-def menu():
+
+from recomendacoes import (
+    menu_recomendacoes
+)
+
+from sistema import (
+    mostrar_sistema
+)
+
+from estatisticas import(
+    mostrar_estatisticas
+)
+# ============================================================
+# MAIN - Ponto de entrada do programa
+# ============================================================
+# A função main() é o menu principal da aplicação.
+# Ela chama menu_recomendacoes() como uma das opções,
+# mantendo o código organizado e fácil de expandir.
+# ============================================================
+def main():
 
     while True:
 
@@ -38,7 +54,7 @@ def menu():
         print("5 - Categorias")
         print("6 - Registrar filme assistido")
         print("7 - Histórico")
-        print("8 - Recomendar Filme")
+        print("8 - Menu de Recomendações")
         print("9 - Diagnostico de Sistema")
         print("10 - Estatisticas")
         print("11 - Sair")
@@ -67,13 +83,13 @@ def menu():
             exibir_historico()
 
         elif opcao == "8":
-            print("Funcionalidade em desenvolvimento.")
+            menu_recomendacoes()
 
         elif opcao == "9":
-            print("Funcionalidade em desenvolvimento.")
+            mostrar_sistema() 
 
         elif opcao == "10":
-            print("Funcionalidade em desenvolvimento.")
+            mostrar_estatisticas()
 
         elif opcao == "11":
             print("Obrigado por utilizar o SineFlix.")
@@ -87,4 +103,17 @@ def menu():
 # PROGRAMA PRINCIPAL
 # ======================================
 boas_vindas()
-menu()
+# ======================================
+# BLOCO DE EXECUÇÃO DIRETA
+# ======================================
+# O bloco abaixo só executa quando este arquivo é rodado
+# diretamente (ex: python recomendacoes.py).
+#
+# Se este arquivo for importado por outro módulo,
+# o main() NÃO será chamado automaticamente.
+# Isso é uma boa prática em Python para organizar projetos
+# com múltiplos arquivos.
+# ============================================================
+if __name__ == "__main__":
+    main()
+ 
