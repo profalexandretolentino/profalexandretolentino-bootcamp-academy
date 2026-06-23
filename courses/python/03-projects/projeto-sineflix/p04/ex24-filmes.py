@@ -1,5 +1,5 @@
 # ======================================
-# SINEFLIX - CATÁLOGO DE FILMES (EX24/EX25 BASE)
+# SINEFLIX - FILMES (EX24 ATUALIZADO)
 # ======================================
 
 filmes = [
@@ -29,7 +29,6 @@ filmes = [
     {"titulo": "La La Land", "categoria": "Romance", "avaliacao": 0, "visualizacoes": 0}
 ]
 
-
 # ======================================
 # ADICIONAR FILME
 # ======================================
@@ -40,7 +39,7 @@ def adicionar_filme():
     titulo = input("Título do filme: ")
     categoria = input("Categoria do filme: ")
 
-    # Evita duplicidade
+    # Verifica se já existe
     for filme in filmes:
         if filme["titulo"].lower() == titulo.lower():
             print("\nFilme já cadastrado.")
@@ -49,14 +48,12 @@ def adicionar_filme():
     novo_filme = {
         "titulo": titulo,
         "categoria": categoria,
-        "avaliacao": 0,
         "visualizacoes": 0
     }
 
     filmes.append(novo_filme)
 
     print("\nFilme adicionado com sucesso!")
-
 
 # ======================================
 # LISTAR FILMES
@@ -74,9 +71,7 @@ def listar_filmes():
         print("\n---------------------")
         print(f"Título: {filme['titulo']}")
         print(f"Categoria: {filme['categoria']}")
-        print(f"Avaliação: {filme['avaliacao']} estrelas")
         print(f"Visualizações: {filme['visualizacoes']}")
-
 
 # ======================================
 # BUSCAR FILME
@@ -85,6 +80,8 @@ def buscar_filme():
 
     nome = input("Digite o nome do filme: ")
 
+    encontrado = False
+
     for filme in filmes:
 
         if filme["titulo"].lower() == nome.lower():
@@ -92,15 +89,16 @@ def buscar_filme():
             print("\n===== FILME ENCONTRADO =====")
             print(f"Título: {filme['titulo']}")
             print(f"Categoria: {filme['categoria']}")
-            print(f"Avaliação: {filme['avaliacao']} estrelas")
             print(f"Visualizações: {filme['visualizacoes']}")
-            return
 
-    print("\nFilme não encontrado.")
+            encontrado = True
+            break
 
+    if not encontrado:
+        print("\nFilme não encontrado.")
 
 # ======================================
-# MENU DE FILMES
+# MENU FILMES
 # ======================================
 def menu_filmes():
 
@@ -124,8 +122,8 @@ def menu_filmes():
             adicionar_filme()
 
         elif opcao == "0":
-            print("\nVoltando ao menu principal...")
+            print("Voltando ao menu principal...")
             break
 
         else:
-            print("\nOpção inválida!")
+            print("Opção inválida.")

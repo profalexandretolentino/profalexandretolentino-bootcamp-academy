@@ -40,3 +40,30 @@ def exibir_historico():
 
     print(f"\nTotal assistido: {len(historico)}")
 
+    # ======================================
+# MENU HISTORICO
+# ======================================
+def menu_historico():
+
+    while True:
+
+        print("\n===== SINEFLIX - HISTÓRICO =====")
+        print("1 - Exibir Historico")
+        print("2 - Adicionar ao Histórico")
+        print("0 - Voltar")
+
+        opcao = input("Escolha uma opção: ")
+
+        if opcao == "1":
+            exibir_historico()
+
+        elif opcao == "2":
+            adicionar_historico()
+
+        elif opcao == "0":
+            print("Voltando ao menu principal...")
+            break
+
+        else:
+            print("Opção inválida.")
+

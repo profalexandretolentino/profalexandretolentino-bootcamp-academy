@@ -19,11 +19,13 @@ from filmes import(
 
 from historico import(
     adicionar_historico,
-    exibir_historico
+    exibir_historico,
+    menu_historico
 )
 
 from categorias import(
-    exibir_categorias
+    exibir_categorias,
+    menu_categorias
 )
 
 from utilitarios import(
@@ -44,6 +46,10 @@ from estatisticas import(
     mostrar_estatisticas
 )
 
+from series import (
+    menu_series
+)
+
 # ============================================================
 # MAIN - Ponto de entrada do programa
 # ============================================================
@@ -58,12 +64,12 @@ def main():
 
         print("1 - Usuários")
         print("2 - Catálogo de Filmes")
-        print("3 - Exibir filmes por categorias")
-        print("4 - Registrar filme assistido")
-        print("5 - Exibir Histórico")
+        print("3 - Catálogo de Series")
+        print("4 - Categorias")
+        print("5 - Histórico")
         print("6 - Recomendações")
         print("7 - Diagnostico de Sistema")
-        print("8 - Estatisticas")
+        print("8 - Estatisticas Matemáticas")
         print("9 - Analytics")
         print("10 - Sair")
 
@@ -79,13 +85,13 @@ def main():
             menu_filmes()
 
         elif opcao == "3":
-            exibir_categorias()
+            menu_series()
 
         elif opcao == "4":
-            adicionar_historico()
+            menu_categorias()
 
         elif opcao == "5":
-            exibir_historico()
+            menu_historico()
 
         elif opcao == "6":
             menu_recomendacoes()
@@ -97,7 +103,7 @@ def main():
             mostrar_estatisticas()
 
         elif opcao == "9":
-            menu_analytics()
+            menu_analytics() 
 
         elif opcao == "10":
             print("Obrigado por utilizar o SineFlix.")

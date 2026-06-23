@@ -145,9 +145,9 @@ def calcular_ranking_categorias():
 # FUNÇÃO PRINCIPAL - Chama todas as estatísticas
 # ============================================================
 def mostrar_estatisticas():
-    print("\n========================================")
-    print("   SINEFLIX - ESTATÍSTICAS DO SISTEMA   ")
-    print("========================================")
+    print("\n==================================================")
+    print("   SINEFLIX - ESTATÍSTICAS MATEMÁTICAS DO SISTEMA   ")
+    print("====================================================")
 
     calcular_raiz_filmes()        # Parte 1 — math.sqrt()
     calcular_quadrado_filmes()    # Parte 2 — math.pow()
