@@ -1,27 +1,60 @@
 # Histórico de visualizações
-from filmes import filmes
 
-historico = []
+from dados_historico import historico
+from filmes import filmes
+from series import series
+
 
 # ======================================
-# ADICIONAR HISTÓRICO
+# REGISTRAR HISTÓRICO
+# ======================================
+def registrar_historico(tipo, titulo):
+
+    # Verifica se o conteúdo já existe no histórico
+    for item in historico:
+
+        if item["tipo"] == tipo and item["titulo"].lower() == titulo.lower():
+
+            # Apenas incrementa a quantidade de visualizações
+            item["vezes_assistido"] += 1
+            return
+
+    # Se ainda não existir, cria um novo registro
+    historico.append({
+        "tipo": tipo,
+        "titulo": titulo,
+        "vezes_assistido": 1
+    })
+
+
+# ======================================
+# ADICIONAR HISTÓRICO MANUAL
 # ======================================
 def adicionar_historico():
-    filme = input("Qual filme você assistiu? ").strip() # .strip() remove espaços extras inúteis
 
-    # 1. Verifica se o filme existe no catálogo
-    if filme not in filmes:
-        print(f"Erro: O filme {filme} não existe no catálogo. Não é possível adicionar ao histórico.")
-        return # Encerra a função mais cedo
+    nome = input("Qual conteúdo você assistiu? ").strip()
 
-    # 2. Verifica se o filme já foi assistido (evita duplicados no histórico, se desejar)
-    if filme in historico:
-        print(f"Você já informou que assistiu ao filme {filme} anteriormente.")
-        return 
+    for filme in filmes:
 
-    # 3. Se passou pelas validações, adiciona ao histórico
-    historico.append(filme)
-    print(f"Sucesso: {filme} adicionado ao seu histórico de assistidos!")
+        if filme["titulo"].lower() == nome.lower():
+
+            filme["visualizacoes"] += 1
+            registrar_historico("Filme", filme["titulo"])
+
+            print(f"\n{filme['titulo']} assistido com sucesso!")
+            return
+
+    for serie in series:
+
+        if serie["titulo"].lower() == nome.lower():
+
+            serie["visualizacoes"] += 1
+            registrar_historico("Série", serie["titulo"])
+
+            print(f"\n{serie['titulo']} assistida com sucesso!")
+            return
+
+    print("\nConteúdo não encontrado no catálogo.")
 
 
 # ======================================
@@ -30,26 +63,32 @@ def adicionar_historico():
 def exibir_historico():
 
     if len(historico) == 0:
-        print("Nenhum filme registrado.")
+        print("\nNenhum conteúdo assistido.")
         return
 
-    print("\n===== HISTÓRICO =====")
+    print("\n===== HISTÓRICO DE VISUALIZAÇÕES =====")
 
-    for filme in historico:
-        print(f"- {filme}")
+    for item in historico:
 
-    print(f"\nTotal assistido: {len(historico)}")
+        print(
+            f"[{item['tipo']}] "
+            f"{item['titulo']} "
+            f"({item['vezes_assistido']} visualização(ões))"
+        )
 
-    # ======================================
-# MENU HISTORICO
+    print(f"\nConteúdos diferentes assistidos: {len(historico)}")
+
+
+# ======================================
+# MENU HISTÓRICO
 # ======================================
 def menu_historico():
 
     while True:
 
         print("\n===== SINEFLIX - HISTÓRICO =====")
-        print("1 - Exibir Historico")
-        print("2 - Adicionar ao Histórico")
+        print("1 - Exibir Histórico")
+        print("2 - Registrar Conteúdo Assistido")
         print("0 - Voltar")
 
         opcao = input("Escolha uma opção: ")
@@ -66,4 +105,3 @@ def menu_historico():
 
         else:
             print("Opção inválida.")
-

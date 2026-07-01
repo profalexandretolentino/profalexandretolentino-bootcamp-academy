@@ -1,5 +1,5 @@
 # ============================================================
-# SINEFLIX - Estatísticas do Catálogo
+# SINEFLIX - Simulações Matemáticas
 # Módulo utilizado: math (biblioteca padrão do Python)
 # ============================================================
 # O módulo math oferece funções matemáticas prontas para uso.
@@ -144,7 +144,7 @@ def calcular_ranking_categorias():
 # ============================================================
 # FUNÇÃO PRINCIPAL - Chama todas as estatísticas
 # ============================================================
-def mostrar_estatisticas():
+def mostrar_simulacao():
     print("\n==================================================")
     print("   SINEFLIX - ESTATÍSTICAS MATEMÁTICAS DO SISTEMA   ")
     print("====================================================")

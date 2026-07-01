@@ -135,13 +135,11 @@ def avaliar_filme():
 # ======================================
 
 def assistir_filme():
-    from historico import registrar_historico
     nome = input("Digite o nome do filme assistido: ")
 
     for filme in filmes:
         if filme["titulo"].lower() == nome.lower():
             filme["visualizacoes"] += 1
-            registrar_historico("Filme", filme["titulo"])
             print("Visualização registrada com sucesso!")
             return
 

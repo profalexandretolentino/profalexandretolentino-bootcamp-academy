@@ -111,13 +111,11 @@ def avaliar_serie():
 # ASSITIR SÉRIES
 # ======================================
 def assistir_serie():
-    from historico import registrar_historico
     nome = input("Digite o nome da série assistida: ")
 
     for serie in series:
         if serie["titulo"].lower() == nome.lower():
             serie["visualizacoes"] += 1
-            registrar_historico("Serie", serie["titulo"])
             print("Visualização registrada com sucesso!")
             return
 

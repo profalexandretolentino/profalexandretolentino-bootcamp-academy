@@ -41,3 +41,13 @@ def pausar():
 
     # Aguarda o usuário pressionar ENTER
     input("\nPressione ENTER para continuar...")
+
+# ======================================
+# EXIBIR ESTRELAS
+# ======================================
+def exibir_estrelas(avaliacao):
+
+    if avaliacao == 0:
+        return "Sem avaliação"
+
+    return "⭐" * avaliacao
